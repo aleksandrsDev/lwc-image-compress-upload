@@ -1,4 +1,4 @@
-# sf-image-compress-upload
+# lwc-image-compress-upload
 
 An LWC that looks and behaves like `lightning-file-upload` but works with images only and **compresses each image in the browser before uploading it**. Compression uses the standard [`processImage`](https://developer.salesforce.com/docs/platform/lightning-component-reference/guide/lightning-media-utils.html) function from `lightning/mediaUtils`. Admins control it through Custom Metadata.
 
@@ -18,10 +18,17 @@ To try it, add **Image Compress Upload Demo** to an Account page (or any record 
 
 ## Installation
 
-```sh
-sf project deploy start --source-dir force-app -o <org>
-sf org assign permset --name Image_Compress_Upload_User -o <org>
-```
+This repository contains only the source (`force-app`), not a full Salesforce DX project. To install it:
+
+1. Copy `force-app` into a Salesforce DX project. To start a new one, run `sf project generate --name my-project`. Its default `.forceignore` already keeps the `__tests__` folders out of deploys.
+2. Deploy and assign the permission set:
+
+   ```sh
+   sf project deploy start --source-dir force-app -o <org>
+   sf org assign permset --name Image_Compress_Upload_User -o <org>
+   ```
+
+The demo component is optional. To leave it out, delete the three `lwc/imageCompressUploadDemo*` folders before deploying.
 
 The **Image Compress Upload User** permission set grants access to the `ImageCompressUploadController` Apex class and read access to both Custom Metadata types. Assign it to everyone who uses the component.
 
@@ -123,12 +130,30 @@ Every text the user sees is a Custom Label with the `ICU_` prefix (category `Ima
 
 ## Development
 
+The tests run inside the Salesforce DX project from [Installation](#installation).
+
+**Jest (LWC):**
+
+1. Install the dependencies with `npm install`. Projects created by `sf project generate` already include `@salesforce/sfdx-lwc-jest`. In a project without it, run `sf force lightning lwc test setup` first.
+2. `sfdx-lwc-jest` has no stub for `lightning/mediaUtils`, so map it to the mock in this repository. In `jest.config.js`:
+
+   ```js
+   const { jestConfig } = require("@salesforce/sfdx-lwc-jest/config");
+
+   module.exports = {
+     ...jestConfig,
+     moduleNameMapper: {
+       "^lightning/mediaUtils$":
+         "<rootDir>/force-app/test/jest-mocks/lightning/mediaUtils"
+     }
+   };
+   ```
+
+3. Run the tests with `npx sfdx-lwc-jest --coverage`.
+
+**Apex and Code Analyzer:**
+
 ```sh
-npm install
-npm run test:unit:coverage   # Jest
-npm run lint
-npm run prettier:verify
-sf project deploy start --source-dir force-app -o <org>
 sf apex run test -o <org> --class-names ImageCompressionConfigSelectorTest --class-names ImageCompressionConfigServiceTest --class-names ImageUploadServiceTest --class-names ImageCompressUploadControllerTest --code-coverage --wait 10
 sf code-analyzer run --rule-selector Recommended --target force-app
 ```
