@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Target_Size_Must_Be_Positive</fullName>
+    <active>true</active>
+    <errorConditionFormula>Target_Size_KB__c &lt;= 0</errorConditionFormula>
+    <errorDisplayField>Target_Size_KB__c</errorDisplayField>
+    <errorMessage>Target Size must be greater than 0.</errorMessage>
+</ValidationRule>

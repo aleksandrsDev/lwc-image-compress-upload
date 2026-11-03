@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>68.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>Image Compress Upload</masterLabel>
+    <description
+  >Uploads images like the standard File Upload component, compressing them first as configured in Image Compression Settings.</description>
+    <targets>
+        <target>lightning__RecordPage</target>
+        <target>lightning__AppPage</target>
+        <target>lightning__HomePage</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig
+      targets="lightning__RecordPage,lightning__AppPage,lightning__HomePage"
+    >
+            <property
+        name="label"
+        type="String"
+        label="Label"
+        description="Text above the file selector. Defaults to &quot;Upload Images&quot;."
+      />
+            <property
+        name="multiple"
+        type="Boolean"
+        label="Allow Multiple Files"
+        default="false"
+      />
+            <property
+        name="accept"
+        type="String"
+        label="Accepted File Types"
+        description="Comma-separated extensions, e.g. .jpg,.png. Can only narrow the supported types (.jpg, .jpeg, .png, .webp, .gif). Defaults to .jpg,.jpeg,.png,.webp."
+      />
+            <property
+        name="disabled"
+        type="Boolean"
+        label="Disabled"
+        default="false"
+      />
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

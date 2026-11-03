@@ -1,0 +1,17 @@
+<template>
+  <template lwc:if={file}>
+    <p class="slds-text-heading_medium slds-m-top_small" data-id="size">
+      {file.sizeLabel}
+    </p>
+    <p
+      class="slds-truncate slds-text-color_weak"
+      title={file.fileName}
+      data-id="name"
+    >
+      {file.fileName}
+    </p>
+  </template>
+  <p lwc:else class="slds-text-color_weak slds-m-top_small" data-id="empty">
+    {emptyMessage}
+  </p>
+</template>

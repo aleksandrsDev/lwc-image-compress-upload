@@ -1,0 +1,21 @@
+<template>
+  <p
+    lwc:if={configErrorMessage}
+    class="slds-text-color_error slds-m-bottom_x-small"
+    role="alert"
+    data-id="config-error"
+  >
+    {configErrorMessage}
+  </p>
+  <lightning-input
+    type="file"
+    label={inputLabel}
+    accept={acceptAttribute}
+    multiple={multiple}
+    disabled={isInputDisabled}
+    onchange={handleFilesSelected}
+  ></lightning-input>
+  <c-image-compress-upload-file-list
+    files={fileRows}
+  ></c-image-compress-upload-file-list>
+</template>

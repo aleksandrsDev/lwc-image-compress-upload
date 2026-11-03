@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>68.0</apiVersion>
+    <description
+  >Showcase of Image Compress Upload: the same picture uploaded with and without compression, plus a batch upload.</description>
+    <isExposed>true</isExposed>
+    <masterLabel>Image Compress Upload Demo</masterLabel>
+    <targets>
+        <target>lightning__RecordPage</target>
+    </targets>
+</LightningComponentBundle>

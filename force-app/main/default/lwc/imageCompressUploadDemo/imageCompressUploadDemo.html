@@ -1,0 +1,92 @@
+<template>
+  <lightning-card title="Image Compress Upload demo" icon-name="standard:file">
+    <p
+      lwc:if={settingsSummary}
+      class="slds-p-horizontal_medium slds-text-body_small slds-text-color_weak"
+      data-id="settings"
+    >
+      {settingsSummary}
+    </p>
+
+    <lightning-layout multiple-rows>
+      <lightning-layout-item
+        padding="around-small"
+        size="12"
+        medium-device-size="6"
+      >
+        <h3 class="slds-text-heading_small">Standard file upload</h3>
+        <lightning-file-upload
+          label="Original"
+          accept={acceptedFormats}
+          record-id={recordId}
+          data-slot="original"
+          onuploadfinished={handleUploadFinished}
+        ></lightning-file-upload>
+        <c-image-compress-upload-demo-file
+          file={originalFile}
+          empty-message="Upload a picture to see its stored size."
+          data-id="original-file"
+        ></c-image-compress-upload-demo-file>
+      </lightning-layout-item>
+
+      <lightning-layout-item
+        padding="around-small"
+        size="12"
+        medium-device-size="6"
+      >
+        <h3 class="slds-text-heading_small">Image Compress Upload</h3>
+        <c-image-compress-upload
+          label="Compressed"
+          record-id={recordId}
+          data-slot="compressed"
+          onuploadfinished={handleUploadFinished}
+        ></c-image-compress-upload>
+        <c-image-compress-upload-demo-file
+          file={compressedFile}
+          empty-message="Upload the same picture here."
+          data-id="compressed-file"
+        ></c-image-compress-upload-demo-file>
+      </lightning-layout-item>
+
+      <lightning-layout-item
+        lwc:if={comparison}
+        padding="around-small"
+        size="12"
+      >
+        <div
+          class="slds-box slds-theme_success slds-text-align_center slds-text-heading_medium"
+          data-id="comparison"
+        >
+          {comparison}
+        </div>
+      </lightning-layout-item>
+
+      <lightning-layout-item
+        padding="around-small"
+        size="12"
+        medium-device-size="6"
+      >
+        <h3 class="slds-text-heading_small">Batch</h3>
+        <c-image-compress-upload
+          label="Several images at once"
+          record-id={recordId}
+          multiple
+          data-id="batch"
+        ></c-image-compress-upload>
+      </lightning-layout-item>
+
+      <lightning-layout-item
+        padding="around-small"
+        size="12"
+        medium-device-size="6"
+      >
+        <h3 class="slds-text-heading_small">Rejection</h3>
+        <c-image-compress-upload
+          label="Set the file dialog to All Files and pick a PDF"
+          record-id={recordId}
+          data-id="rejection"
+        ></c-image-compress-upload>
+      </lightning-layout-item>
+    </lightning-layout>
+  </lightning-card>
+</template>

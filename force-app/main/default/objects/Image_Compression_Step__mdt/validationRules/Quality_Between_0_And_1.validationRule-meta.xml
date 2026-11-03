@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Quality_Between_0_And_1</fullName>
+    <active>true</active>
+    <errorConditionFormula
+  >OR(Compression_Quality__c &lt;= 0, Compression_Quality__c &gt; 1)</errorConditionFormula>
+    <errorDisplayField>Compression_Quality__c</errorDisplayField>
+    <errorMessage
+  >Compression Quality must be greater than 0 and at most 1.</errorMessage>
+</ValidationRule>

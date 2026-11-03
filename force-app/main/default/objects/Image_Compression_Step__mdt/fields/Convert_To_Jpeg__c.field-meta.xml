@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Convert_To_Jpeg__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description
+  >When checked, PNG and GIF images are converted to JPEG (white background, transparency lost) so Compression Quality applies to them.</description>
+    <externalId>false</externalId>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <inlineHelpText
+  >When checked, PNG and GIF images are converted to JPEG (white background, transparency lost) so Compression Quality applies to them.</inlineHelpText>
+    <label>Convert to JPEG</label>
+    <type>Checkbox</type>
+</CustomField>

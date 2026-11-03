@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Max_Width__c</fullName>
+    <description
+  >Images wider than this are scaled down, keeping their aspect ratio.</description>
+    <externalId>false</externalId>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <inlineHelpText
+  >Images wider than this are scaled down, keeping their aspect ratio.</inlineHelpText>
+    <label>Max Width (px)</label>
+    <precision>5</precision>
+    <required>true</required>
+    <scale>0</scale>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

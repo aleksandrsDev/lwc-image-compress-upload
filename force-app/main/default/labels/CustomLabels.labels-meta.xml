@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>ICU_Default_Label</fullName>
+        <categories>ImageCompressUpload</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription
+    >Default label above the image file selector</shortDescription>
+        <value>Upload Images</value>
+    </labels>
+    <labels>
+        <fullName>ICU_Error_Compression_Failed</fullName>
+        <categories>ImageCompressUpload</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription
+    >The browser could not compress the image</shortDescription>
+        <value
+    >This image couldn&apos;t be compressed. Try a smaller image or a different format.</value>
+    </labels>
+    <labels>
+        <fullName>ICU_Error_Config_Missing</fullName>
+        <categories>ImageCompressUpload</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription
+    >The Default Image Compression Settings record is missing</shortDescription>
+        <value
+    >Image upload isn&apos;t set up. Ask your Salesforce admin to create the Image Compression Settings record named Default.</value>
+    </labels>
+    <labels>
+        <fullName>ICU_Error_Config_Unavailable</fullName>
+        <categories>ImageCompressUpload</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription
+    >The component could not load its configuration</shortDescription>
+        <value>Image upload is unavailable: {0}</value>
+    </labels>
+    <labels>
+        <fullName>ICU_Error_Empty_File</fullName>
+        <categories>ImageCompressUpload</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>The uploaded file has no content</shortDescription>
+        <value>The file is empty.</value>
+    </labels>
+    <labels>
+        <fullName>ICU_Error_No_Steps</fullName>
+        <categories>ImageCompressUpload</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription
+    >The Default settings record has no compression steps</shortDescription>
+        <value
+    >Image upload isn&apos;t set up. Ask your Salesforce admin to add Image Compression Step records to the Default settings.</value>
+    </labels>
+    <labels>
+        <fullName>ICU_Error_Too_Large</fullName>
+        <categories>ImageCompressUpload</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription
+    >Image above hard limit. {0} = size KB, {1} = limit KB</shortDescription>
+        <value
+    >Not uploaded: the image is {0} KB after compression, above the {1} KB limit.</value>
+    </labels>
+    <labels>
+        <fullName>ICU_Error_Unsupported_Type</fullName>
+        <categories>ImageCompressUpload</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription
+    >The file is not a supported image. {0} = file name</shortDescription>
+        <value
+    >Not uploaded: {0} isn&apos;t a supported image (JPG, PNG, WebP or GIF).</value>
+    </labels>
+    <labels>
+        <fullName>ICU_Error_Upload_Failed</fullName>
+        <categories>ImageCompressUpload</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription
+    >Salesforce rejected the file. {0} = reason</shortDescription>
+        <value>Upload failed: {0}</value>
+    </labels>
+    <labels>
+        <fullName>ICU_Status_Compressing</fullName>
+        <categories>ImageCompressUpload</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription
+    >File status while the image is being compressed</shortDescription>
+        <value>Compressing…</value>
+    </labels>
+    <labels>
+        <fullName>ICU_Status_Queued</fullName>
+        <categories>ImageCompressUpload</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription
+    >File status while waiting for other files to finish</shortDescription>
+        <value>Waiting…</value>
+    </labels>
+    <labels>
+        <fullName>ICU_Status_Uploaded</fullName>
+        <categories>ImageCompressUpload</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription
+    >File status after a successful upload. {0} = final size in KB</shortDescription>
+        <value>Uploaded ({0} KB)</value>
+    </labels>
+    <labels>
+        <fullName>ICU_Status_Uploading</fullName>
+        <categories>ImageCompressUpload</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription
+    >File status while the image is being uploaded</shortDescription>
+        <value>Uploading…</value>
+    </labels>
+    <labels>
+        <fullName>ICU_Warning_Above_Target</fullName>
+        <categories>ImageCompressUpload</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription
+    >Uploaded above target. {0} = size KB, {1} = target KB</shortDescription>
+        <value
+    >Uploaded, but still {0} KB after compression (target {1} KB).</value>
+    </labels>
+</CustomLabels>

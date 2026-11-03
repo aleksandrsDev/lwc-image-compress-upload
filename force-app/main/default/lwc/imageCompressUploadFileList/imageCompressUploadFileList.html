@@ -1,0 +1,27 @@
+<template>
+  <ul lwc:if={hasRows} class="slds-has-dividers_bottom-space slds-m-top_small">
+    <template for:each={rows} for:item="row">
+      <li key={row.key} class="slds-item" data-state={row.state}>
+        <lightning-layout vertical-align="center">
+          <lightning-layout-item class="slds-m-right_small">
+            <lightning-icon
+              icon-name={row.iconName}
+              variant={row.iconVariant}
+              size="x-small"
+              alternative-text={row.message}
+            ></lightning-icon>
+          </lightning-layout-item>
+          <lightning-layout-item
+            flexibility="auto"
+            class="slds-has-flexi-truncate"
+          >
+            <p class="slds-truncate" title={row.name} data-id="name">
+              {row.name}
+            </p>
+            <p class={row.messageClass} data-id="message">{row.message}</p>
+          </lightning-layout-item>
+        </lightning-layout>
+      </li>
+    </template>
+  </ul>
+</template>
